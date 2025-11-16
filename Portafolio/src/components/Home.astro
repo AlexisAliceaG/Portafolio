@@ -1,0 +1,48 @@
+---
+import LinkedIn from '../components/icons/IconLinkedin.astro';
+import CV from '../components/icons/IconCv.astro';
+import GitHub from '../components/icons/IconGitHub.astro';
+import Instagram from '../components/icons/IconInstagram.astro';
+
+---
+
+<div class="home flex items-center justify-center gap-10 w-3/4 h-screen mx-auto">
+    
+    <!-- Foto -->
+    <div class="h-52 w-52 rounded-full bg-black"></div>
+
+    <!-- Texto -->
+    <div class="name flex flex-col gap-2 max-w-md">
+        <p class="text-3xl font-semibold">Jesus Alexis Alicea Gonzalez</p>
+        <h2 class="text-lg text-gray-600">Ingeniero en sistemas computacionales</h2>
+
+        <!-- Botón email -->
+        <button class="btn-email border-2 border-black px-6 py-2 rounded-full text-black font-medium hover:bg-black hover:text-white transition">
+            ing.jesusalexisaliceagonzalez@gmail.com
+        </button>
+
+        <!-- Social -->
+        <div class="social flex gap-4 mt-2">
+            <a href="/CV_Alexis_Alicea.pdf" target="_blank" rel="noopener noreferrer">
+            <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition">
+                <CV />
+            </div>
+            </a>
+            <a href="https://www.linkedin.com/in/alexisalicea132/" target="_blank" rel="noopener noreferrer">
+                <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition">
+                    <LinkedIn />
+                </div>
+            </a>
+            <a href="https://www.instagram.com/alexisalicea31/" target="_blank" rel="noopener noreferrer">
+                <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition">
+                    <Instagram />
+                </div>
+            </a>
+            <a href="https://github.com/AlexisAliceaG" target="_blank" rel="noopener noreferrer">
+            <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition">
+                <GitHub />
+            </div>
+            </a>
+        </div>
+    </div>
+</div>
