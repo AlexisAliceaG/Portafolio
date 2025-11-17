@@ -1,0 +1,30 @@
+---
+import type { Experience } from '../helpers/type';
+
+// Props
+interface Props {
+  data: Experience;
+  t: (key: string) => string; // función de traducción
+}
+const { data, t } = Astro.props;
+---
+
+<div class="max-w-xl w-full bg-white border rounded-xl shadow-md p-5 hover:shadow-lg transition">
+    
+    <!-- Título -->
+    <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xl font-semibold text-gray-800">{data.company}</h3>
+        <span class="text-sm text-gray-500">{data.startDate} – {data.endDate}</span>
+    </div>
+
+    <!-- Puesto traducido -->
+    <p class="text-gray-600 font-medium mb-3">{t(data.position)}</p>
+
+    <!-- Aportaciones traducidas -->
+    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+        {data.contributions.map((point) => (
+            <li>{t(point)}</li>
+        ))}
+    </ul>
+</div>
+
