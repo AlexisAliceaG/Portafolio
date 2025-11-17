@@ -1,61 +1,80 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../i18n/utils";
+import { lenguageList } from "../i18n/ui";
+
+const currentLang = Astro.currentLocale || "es";
+
+const traslateLabels = useTranslations(
+  currentLang as keyof typeof lenguageList
+);
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="/src/styles/global.css">
-		<title>Alexis Alicea</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang={currentLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <title>Alexis Alicea</title>
+  </head>
+  <body>
+    <div class="w-full flex justify-center h-[5vh] mt-4 relative">
+      <button
+        onclick="document.getElementById('langMenu').classList.toggle('hidden')"
+        class="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-100 transition"
+      >
+        🌐       {traslateLabels("layout.lenguage")}
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <ul
+        id="langMenu"
+        class="hidden absolute left-1/2 -translate-x-1/2 mt-2 w-40 bg-white border rounded-md shadow-lg p-2"
+      >
+        {
+          Object.entries(lenguageList).map(([key, label]: [string, string]) => (
+            <li>
+              <a
+                href={`/${key}`}
+                class="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-md transition"
+              >
+                <span class="text-lg">
+                  {key === "es" && "🇪🇸"}
+                  {key === "en" && "🇺🇸"}
+                </span>
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <slot />
+  </body>
 </html>
 
 <style>
-	body {
-		margin: 0;
-		padding: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-family: 'Roboto', sans-serif;
-	}
-	/* ===========================
-   1. Móviles pequeños (≤ 480px)
-   =========================== */
-	@media (max-width: 480px) {
-	/* estilos para móviles pequeños */
-	}
-
-	/* ===========================
-	2. Móviles estándar (481–768px)
-	=========================== */
-	@media (min-width: 481px) and (max-width: 768px) {
-	/* estilos para móviles vertical/horizontal */
-	}
-
-	/* ===========================
-	3. Tablets (769–1024px)
-	=========================== */
-	@media (min-width: 769px) and (max-width: 1024px) {
-	/* estilos para tablets */
-	}
-
-	/* ===========================
-	4. Laptops pequeñas (1025–1280px)
-	=========================== */
-	@media (min-width: 1025px) and (max-width: 1280px) {
-	/* estilos para laptops pequeñas */
-	}
-
-	/* ===========================
-	5. Pantallas grandes (≥ 1281px)
-	=========================== */
-	@media (min-width: 1281px) {
-	/* estilos para monitores grandes */
-	}
-
+  body {
+    margin: 0;
+    padding: 0;
+  }
 </style>
