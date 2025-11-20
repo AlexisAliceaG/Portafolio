@@ -1,4 +1,4 @@
-import type { Experience } from './type';
+import type { Experience,Projects } from './type';
 
 export const experiences: Experience[] = [
   {
@@ -19,5 +19,30 @@ export const experiences: Experience[] = [
     contributions: [
       "professionalexperience.agrovizion.contributions.point1",
       "professionalexperience.agrovizion.contributions.point2"    ]
+  }
+];
+
+export const projects: Projects[] = [
+  {
+    name: "projects.stationery.name",
+    status: "projects.stationery.status",
+    description: "projects.stationery.description",
+    technologies: ["Laravel", "PHP","Postgressql", "Tailwind CSS", "AWS"],
+    link: "https://papeleriamary.ddns.net/",
+    github: "https://github.com/AlexisAliceaG/Stationery",
+    startDate: "Oct 2024",
+    endDate: "Mar 2025",
+    image: "/images/StationeryMary.PNG"
+  },
+   {
+    name: "projects.stationery.name",
+    status: "projects.stationery.status",
+    description: "projects.stationery.description",
+    technologies: ["Laravel", "PHP","Postgressql", "Tailwind CSS", "AWS"],
+    link: "https://papeleriamary.ddns.net/",
+    github: "https://github.com/AlexisAliceaG/Stationery",
+    startDate: "Oct 2024",
+    endDate: "Mar 2025",
+    image: "/images/StationeryMary.PNG"
   }
 ];

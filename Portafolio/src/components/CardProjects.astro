@@ -1,0 +1,82 @@
+---
+import type { Projects } from "../helpers/type";
+import GitHub from "../components/icons/IconGitHub.astro";
+
+interface Props {
+  data: Projects;
+  t: (key: string) => string;
+}
+const { data, t } = Astro.props;
+---
+
+<div
+  class="max-w-3xl w-full bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+>
+  <!-- Imagen superior (más elegante) -->
+  <div class="relative w-full h-56 md:h-64 overflow-hidden">
+    <img
+      src={data.image}
+      alt={t(data.name)}
+      class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+    />
+
+    <!-- Gradiente suave encima de la imagen -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+
+    <!-- Título sobre la imagen -->
+    <h3 class="absolute bottom-3 left-4 text-xl font-semibold text-white drop-shadow-lg">
+      {t(data.name)}
+    </h3>
+  </div>
+
+  <!-- Contenido -->
+  <div class="p-6 flex flex-col gap-4">
+    <div class="flex flex-col gap-1">
+      <span class="text-sm font-medium text-gray-500">
+        {t(data.status)}
+      </span>
+      <span class="text-xs text-gray-500">
+        {data.startDate} – {data.endDate}
+      </span>
+    </div>
+
+    <p class="text-gray-700 text-sm leading-relaxed">
+      {t(data.description)}
+    </p>
+
+    <!-- Tecnologías -->
+    <div class="flex flex-wrap gap-2 mt-2">
+      {data.technologies.map((tech) => (
+        <span class="bg-gray-100 text-gray-800 text-[11px] px-3 py-1 rounded-full border border-gray-200 shadow-sm">
+          {tech}
+        </span>
+      ))}
+    </div>
+
+    <!-- Botones -->
+    <div class="flex gap-3 mt-4">
+      <a
+        href={data.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-white bg-black hover:bg-gray-900 px-4 py-2.5 rounded-lg text-sm font-medium transition"
+      >
+        <div class="relative w-4 h-4">
+          <span class="absolute inline-flex w-full h-full rounded-full bg-white opacity-30 animate-ping"></span>
+          <span class="relative inline-flex w-4 h-4 rounded-full bg-white"></span>
+        </div>
+        Live
+      </a>
+
+      <a
+        href={data.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-white bg-black hover:bg-gray-900 px-4 py-2.5 rounded-lg text-sm font-medium transition"
+      >
+        <GitHub class="w-4 h-4" />
+        GitHub
+      </a>
+    </div>
+  </div>
+</div>
