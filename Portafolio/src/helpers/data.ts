@@ -1,4 +1,4 @@
-import type { Experience,Projects } from './type';
+import type { Experience,Projects,Skills } from './type';
 
 export const experiences: Experience[] = [
   {
@@ -22,6 +22,58 @@ export const experiences: Experience[] = [
   }
 ];
 
+export const skills: Skills[] = [
+  {
+    categorie: "projects.skills.lenguaje",
+    technologies: [
+      { name: "PHP", icon: "/image/php.png" },
+      { name: "C#", icon: "/icons/csharp.svg" },
+      { name: "Python", icon: "/icons/python.svg" },
+      { name: "JavaScript", icon: "/icons/js.svg" },
+    ],
+  },
+  {
+    categorie: "projects.skills.cloud",
+    technologies: [
+      { name: "AWS", icon: "/icons/aws.svg" },
+    ],
+  },
+  {
+    categorie: "projects.skills.database",
+    technologies: [
+      { name: "MySQL", icon: "/icons/mysql.svg" },
+      { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
+      { name: "SQL Server", icon: "/icons/sqlserver.svg" },
+    ],
+  },
+  {
+    categorie: "projects.skills.servers",
+    technologies: [
+      { name: "Linux", icon: "/icons/linux.svg" },
+    ],
+  },
+  {
+    categorie: "projects.skills.frameworks",
+    technologies: [
+      { name: "Laravel", icon: "/icons/laravel.svg" },
+      { name: ".NET", icon: "/icons/dotnet.svg" },
+    ],
+  },
+  {
+    categorie: "projects.skills.autentication",
+    technologies: [
+      { name: "JWT Tokens", icon: "/icons/jwt.svg" },
+    ],
+  },
+  {
+    categorie: "projects.skills.cibersecurity",
+    technologies: [
+      { name: "HTTPS y SSL", icon: "/icons/ssl.svg" },
+    ],
+  }
+];
+
+
 export const projects: Projects[] = [
   {
     name: "projects.stationery.name",
@@ -44,5 +96,5 @@ export const projects: Projects[] = [
     startDate: "Oct 2024",
     endDate: "Mar 2025",
     image: "/images/StationeryMary.PNG"
-  }
+  },
 ];

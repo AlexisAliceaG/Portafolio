@@ -16,3 +16,10 @@ export type Projects = {
   startDate?: string;
   endDate?: string;
 };
+export type Skills = {
+  categorie: string;
+  technologies: {
+    name: string;
+    icon: string;
+  }[];
+};
