@@ -1,30 +1,29 @@
 ---
 import type { Experience } from '../helpers/type';
 
-// Props
 interface Props {
   data: Experience;
-  t: (key: string) => string; // función de traducción
+  t: (key: string) => string;
 }
 const { data, t } = Astro.props;
 ---
+<li class="mb-10 ml-6 relative">
+  <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-500 rounded-full -left-3 ring-4 ring-white">
+    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+      <line x1="16" y1="2" x2="16" y2="6"></line>
+      <line x1="8" y1="2" x2="8" y2="6"></line>
+      <line x1="3" y1="10" x2="21" y2="10"></line>
+    </svg>
+  </span>
+  <time class="ml-6 block mb-2 text-sm text-white ml-1">{data.startDate} – {data.endDate}</time>
 
-<div class="max-w-xl w-full lg:h-[40vh] bg-white border rounded-xl shadow-md p-5 hover:shadow-lg transition">
-    
-    <!-- Título -->
-    <div class="flex items-center justify-between mb-2">
-        <h3 class="text-xl font-semibold text-gray-800">{data.company}</h3>
-        <span class="text-sm text-gray-500">{data.startDate} – {data.endDate}</span>
-    </div>
+  <h3 class="text-lg font-semibold text-white">{data.company}</h3>
+  <p class="text-white font-medium mb-2">{t(data.position)}</p>
 
-    <!-- Puesto traducido -->
-    <p class="text-gray-600 font-medium mb-3">{t(data.position)}</p>
-
-    <!-- Aportaciones traducidas -->
-    <ul class="list-disc pl-5 text-gray-700 space-y-1">
-        {data.contributions.map((point) => (
-            <li>{t(point)}</li>
-        ))}
-    </ul>
-</div>
-
+  <ul class="list-disc pl-5 text-white space-y-1">
+    {data.contributions.map((point) => (
+      <li>{t(point)}</li>
+    ))}
+  </ul>
+</li>

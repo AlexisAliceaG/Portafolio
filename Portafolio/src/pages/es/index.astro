@@ -1,5 +1,7 @@
 ---
-import Home from '../../components/Home.astro';
+import Home from "../../pages/en/Home.astro";
+import Nav from "../../components/Nav.astro";
+import Skills from "../../pages/es/Skills.astro";
 import Layout from '../../layouts/Layout.astro';
 import ProfessionalExperience from './ProfessionalExperience.astro';
 import Projects from '../../pages/es/Projects.astro';
@@ -7,7 +9,17 @@ import Projects from '../../pages/es/Projects.astro';
 ---
 
 <Layout>
-	<Home />
-	<ProfessionalExperience />
-	<Projects />
+  <section class="w-[80%] h-[100vh] flex justify-center items-center flex-col">
+	  <Nav/>
+    <Home />
+  </section>
+    <section class="w-[80%] h-[100vh] flex justify-center">
+    <ProfessionalExperience />
+  </section>
+  <section class="w-[80%] h-[100vh] flex justify-center bg-blue-500">
+    <Skills />
+  </section>
+  <section class="w-[80%] h-[100vh] flex justify-center bg-green-500">
+    
+  </section>
 </Layout>

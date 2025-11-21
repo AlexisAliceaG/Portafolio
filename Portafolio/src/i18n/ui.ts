@@ -4,6 +4,7 @@ export const lenguageList = {
 }
 export const labels ={
     es:{'home.profile.carrer':'Ingeniero en sistemas computacionales',
+        'home.profile.description':'Desarrollador de software Jr con experiencia en el diseño, desarrollo y despliegue de aplicaciones web, móviles y de escritorio, así como en la optimización, mantenimiento y escalabilidad de sistemas ERP.    ',
         'layout.lenguage':'Idioma',
         'home.professional_experience':'Experiencia profesional',
         'professionalexperience.honeywell.positions': 'Desarrollador de Software Junior (Prácticas)',
@@ -15,10 +16,12 @@ export const labels ={
         'home.projects':'Proyectos',
         'projects.stationery.name':'Papelería Mary',
         'projects.stationery.status':'Completado',
-        'projects.stationery.description':'NJDNFAOFNAKODNSAKODASKOD'
+        'projects.stationery.description':'NJDNFAOFNAKODNSAKODASKOD',
+        'home.skills':'Habilidades'
 
     },
     en:{'home.profile.carrer':'Computer Systems Engineer',
+        'home.profile.description':'Junior Software Developer with experience in the design, development, and deployment of web, mobile, and desktop applications, as well as in the optimization, maintenance, and scalability of ERP systems.',
         'layout.lenguage':'Language',
         'home.professional_experience':'Professional Experience',
         'professionalexperience.honeywell.positions': 'Junior Software Developer (Internship)',
@@ -30,6 +33,7 @@ export const labels ={
         'home.projects':'Projects',
         'projects.stationery.name':'Stationery Mary',
         'projects.stationery.status':'Completed',
-        'projects.stationery.description':'NJDNFAOFNAKODNSAKODASKOD'
+        'projects.stationery.description':'NJDNFAOFNAKODNSAKODASKOD',
+        'home.skills':'Skills'
   }
 }
