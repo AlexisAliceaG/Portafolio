@@ -6,10 +6,13 @@ export type Experience = {
   contributions: string[];
 };
 export type Projects = {
-  name: string
+  name: string;
   status: string;
   description: string;
-  technologies?: string[];
+  technologies?: {
+    name: string;
+    logo: string;
+  }[];
   link?: string;
   github?: string;
   image?: string;
@@ -20,6 +23,6 @@ export type Skills = {
   categorie: string;
   technologies: {
     name: string;
-    icon: string;
+    logo: string;
   }[];
 };
